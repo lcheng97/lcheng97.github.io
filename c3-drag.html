@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+
+<head>
+
+
+<script src="https://ajax.googleapis.com/…/l…/jquery/1.12.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/…/them…/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/…/jquer…/1.12.1/jquery-ui.min.js"></script>
+
+<style>
+
+#draggable{
+	background-color:green;
+	width:200px;
+	height:200px;
+	margin:10px;
+}
+
+#resizable
+{
+	background-color:red;
+	width:200px;
+	height:200px;
+	margin:10px;
+}
+
+#target
+{
+	background-color: cyan;
+	width:300px;
+	height:300px;
+	margin:10px;
+}
+</style>
+
+	
+</head>
+
+<body>
+	
+<div id="draggable"></div>
+
+<div id="resizable"></div>
+
+<div id="target"></div>
+
+<div id="datepicker"></div>
+
+<script>
+
+$("#draggable").draggable();
+$("#resizable").resizable();
+$("datepicker").datepicker();
+
+$("#target").droppable.({
+	drop:function(ui,event)
+	{
+		alert("YOU DID IT");
+		$("#target").css("background-color","orange");
+	}
+});
+
+</script>
+
+</body>
